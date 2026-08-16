@@ -1,0 +1,989 @@
+{
+ "schema_version": 1,
+ "generated_at_utc": "2026-08-16T17:26:54Z",
+ "app_version": "1.3.0",
+ "readonly": true,
+ "show_station_category": true,
+ "field_day": {
+  "name": "Field Day 2026-08-04",
+  "location": "",
+  "event_callsign": "",
+  "organizer_club": "",
+  "start_utc": "2026-08-04T16:05:00Z",
+  "end_utc": "2026-08-20T16:05:00Z",
+  "display_timezone": "Europe/Brussels",
+  "bands": [
+   "160m",
+   "80m",
+   "40m"
+  ],
+  "closed": false
+ },
+ "sources": [],
+ "stations": [
+  {
+   "callsign": "ON4BAF/P",
+   "normalized": "ON4BAF",
+   "category": "Open All Band Low Power",
+   "section": "RST",
+   "cells": {
+    "160m": {
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-04T17:06:44Z",
+     "mode": "LSB",
+     "freq_khz": 1840.0,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 1
+    },
+    "80m": {
+     "status": "manual_worked",
+     "manual": true
+    },
+    "40m": {
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-04T17:04:13Z",
+     "mode": "LSB",
+     "freq_khz": 7132.8,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 1
+    }
+   },
+   "qsos": [
+    {
+     "band": "40m",
+     "at_utc": "2026-08-04T17:04:13Z",
+     "mode": "LSB",
+     "freq_khz": 7132.8,
+     "source": "PCHP-ON4AUB"
+    },
+    {
+     "band": "160m",
+     "at_utc": "2026-08-04T17:06:44Z",
+     "mode": "LSB",
+     "freq_khz": 1840.0,
+     "source": "PCHP-ON4AUB"
+    }
+   ]
+  },
+  {
+   "callsign": "ON4CDZ/P",
+   "normalized": "ON4CDZ",
+   "category": "Restricted 12h",
+   "section": "CDZ",
+   "cells": {
+    "160m": {
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-16T11:47:06Z",
+     "mode": "LSB",
+     "freq_khz": 1840.0,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 1
+    },
+    "80m": {
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-04T17:06:27Z",
+     "mode": "LSB",
+     "freq_khz": 3708.0,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 1
+    },
+    "40m": {
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-04T17:05:51Z",
+     "mode": "LSB",
+     "freq_khz": 7132.8,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 2
+    }
+   },
+   "qsos": [
+    {
+     "band": "40m",
+     "at_utc": "2026-08-04T17:05:51Z",
+     "mode": "LSB",
+     "freq_khz": 7132.8,
+     "source": "PCHP-ON4AUB"
+    },
+    {
+     "band": "80m",
+     "at_utc": "2026-08-04T17:06:27Z",
+     "mode": "LSB",
+     "freq_khz": 3708.0,
+     "source": "PCHP-ON4AUB"
+    },
+    {
+     "band": "40m",
+     "at_utc": "2026-08-16T11:46:47Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB"
+    },
+    {
+     "band": "160m",
+     "at_utc": "2026-08-16T11:47:06Z",
+     "mode": "LSB",
+     "freq_khz": 1840.0,
+     "source": "PCHP-ON4AUB"
+    }
+   ]
+  },
+  {
+   "callsign": "ON4FA/P",
+   "normalized": "ON4FA",
+   "category": "Restricted 24h",
+   "section": "RAF",
+   "cells": {
+    "160m": {
+     "status": "manual_worked",
+     "manual": true
+    },
+    "80m": {
+     "status": "manual_worked",
+     "manual": true
+    },
+    "40m": {
+     "status": "manual_worked",
+     "manual": true
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON4KSD/P",
+   "normalized": "ON4KSD",
+   "category": "Open All Band Low Power",
+   "section": "KSD",
+   "cells": {
+    "160m": {
+     "status": "manual_worked",
+     "manual": true
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-16T11:32:53Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 2
+    }
+   },
+   "qsos": [
+    {
+     "band": "40m",
+     "at_utc": "2026-08-16T11:32:53Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB"
+    },
+    {
+     "band": "40m",
+     "at_utc": "2026-08-16T11:41:12Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB"
+    }
+   ]
+  },
+  {
+   "callsign": "ON4MCL/P",
+   "normalized": "ON4MCL",
+   "category": "Open All Band Low Power",
+   "section": "MCL",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-16T11:37:26Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 1
+    }
+   },
+   "qsos": [
+    {
+     "band": "40m",
+     "at_utc": "2026-08-16T11:37:26Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB"
+    }
+   ]
+  },
+  {
+   "callsign": "ON4MLB/P",
+   "normalized": "ON4MLB",
+   "category": "QRP 24h",
+   "section": "MLB",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-16T11:44:23Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 1
+    }
+   },
+   "qsos": [
+    {
+     "band": "40m",
+     "at_utc": "2026-08-16T11:44:23Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB"
+    }
+   ]
+  },
+  {
+   "callsign": "ON4MNS/P",
+   "normalized": "ON4MNS",
+   "category": "Open All Band Low Power",
+   "section": "MNS",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON4OSA/P",
+   "normalized": "ON4OSA",
+   "category": "Open All Band Low Power",
+   "section": "OSA",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON4PHI/P",
+   "normalized": "ON4PHI",
+   "category": "Restricted 24h",
+   "section": "PHI",
+   "cells": {
+    "160m": {
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-04T17:17:58Z",
+     "mode": "LSB",
+     "freq_khz": 1840.0,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 1
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-04T17:18:36Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 1
+    }
+   },
+   "qsos": [
+    {
+     "band": "160m",
+     "at_utc": "2026-08-04T17:17:58Z",
+     "mode": "LSB",
+     "freq_khz": 1840.0,
+     "source": "PCHP-ON4AUB"
+    },
+    {
+     "band": "40m",
+     "at_utc": "2026-08-04T17:18:36Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB"
+    }
+   ]
+  },
+  {
+   "callsign": "ON4RAC/P",
+   "normalized": "ON4RAC",
+   "category": "Restricted 12h",
+   "section": "RAC",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON4RAT/P",
+   "normalized": "ON4RAT",
+   "category": "Open All Band Low Power",
+   "section": "RAT",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON4RCA/P",
+   "normalized": "ON4RCA",
+   "category": "Restricted 12h",
+   "section": "RCA",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON4SNW/P",
+   "normalized": "ON4SNW",
+   "category": "Restricted 12h",
+   "section": "SNW",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON4TOR/P",
+   "normalized": "ON4TOR",
+   "category": "Open All Band Low Power",
+   "section": "TOR",
+   "cells": {
+    "160m": {
+     "status": "manual_worked",
+     "manual": true
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON5ARE/P",
+   "normalized": "ON5ARE",
+   "category": "Restricted 24h",
+   "section": "LVN",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON5CLR/P",
+   "normalized": "ON5CLR",
+   "category": "Restricted 12h",
+   "section": "CLR",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON5LL/P",
+   "normalized": "ON5LL",
+   "category": "Open All Band Low Power",
+   "section": "NOL",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON5UB/P",
+   "normalized": "ON5UB",
+   "category": "Restricted 24h",
+   "section": "BXE",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON5UG/P",
+   "normalized": "ON5UG",
+   "category": "Restricted 24h",
+   "section": "GNT",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON5VL/P",
+   "normalized": "ON5VL",
+   "category": "Restricted 12h",
+   "section": "LGE",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON6NB/P",
+   "normalized": "ON6NB",
+   "category": "Open All Band Low Power",
+   "section": "NBT",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON6OBR/P",
+   "normalized": "ON6OBR",
+   "category": "Open All Band Low Power",
+   "section": "OBR",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON6RC/P",
+   "normalized": "ON6RC",
+   "category": "Open All Band Low Power",
+   "section": "NMR",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON6SI/P",
+   "normalized": "ON6SI",
+   "category": "Restricted 24h",
+   "section": "NNV",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-04T17:33:38Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 1
+    }
+   },
+   "qsos": [
+    {
+     "band": "40m",
+     "at_utc": "2026-08-04T17:33:38Z",
+     "mode": "LSB",
+     "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB"
+    }
+   ]
+  },
+  {
+   "callsign": "ON6UB/P",
+   "normalized": "ON6UB",
+   "category": "Restricted 24h",
+   "section": "MWV",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON6WL/P",
+   "normalized": "ON6WL",
+   "category": "Restricted 24h",
+   "section": "WLD",
+   "cells": {
+    "160m": {
+     "status": "manual_worked",
+     "manual": true
+    },
+    "80m": {
+     "status": "manual_worked",
+     "manual": true
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON6ZT/P",
+   "normalized": "ON6ZT",
+   "category": "Open All Band Low Power",
+   "section": "ZTM",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON6ZY/P",
+   "normalized": "ON6ZY",
+   "category": "Restricted 12h",
+   "section": "CLR",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "ON7ERA/P",
+   "normalized": "ON7ERA",
+   "category": "Open All Band Low Power",
+   "section": "ERA",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "OP6A/P",
+   "normalized": "OP6A",
+   "category": "Restricted 24h",
+   "section": "ARA",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "OQ2A/P",
+   "normalized": "OQ2A",
+   "category": "Restricted 24h",
+   "section": "GBN",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "OR4D/P",
+   "normalized": "OR4D",
+   "category": "Open All Band High Power",
+   "section": "DST",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "OR5N/P",
+   "normalized": "OR5N",
+   "category": "Open All Band Low Power",
+   "section": "NOK",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "OR7C/P",
+   "normalized": "OR7C",
+   "category": "Restricted 24h",
+   "section": "ORA",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "OT2L/P",
+   "normalized": "OT2L",
+   "category": "Restricted 24h",
+   "section": "LUS",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "OT2X/P",
+   "normalized": "OT2X",
+   "category": "Restricted 12h",
+   "section": "ZTM",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "OT4O/P",
+   "normalized": "OT4O",
+   "category": "QRP 12h",
+   "section": "PHI",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  },
+  {
+   "callsign": "OT5X/P",
+   "normalized": "OT5X",
+   "category": "Restricted 24h",
+   "section": "CRD",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
+  }
+ ],
+ "stats": {
+  "stations_total": 38,
+  "bands_total": 3,
+  "cells_total": 114,
+  "cells_worked": 19,
+  "cells_open": 95,
+  "manual_overrides": 8,
+  "cells_excluded": 0,
+  "stations_complete": 3,
+  "stations_partial": 7,
+  "stations_untouched": 28,
+  "per_band": {
+   "160m": {
+    "total": 38,
+    "worked": 7,
+    "open": 31,
+    "manual_overrides": 4,
+    "excluded": 0
+   },
+   "80m": {
+    "total": 38,
+    "worked": 4,
+    "open": 34,
+    "manual_overrides": 3,
+    "excluded": 0
+   },
+   "40m": {
+    "total": 38,
+    "worked": 8,
+    "open": 30,
+    "manual_overrides": 1,
+    "excluded": 0
+   }
+  },
+  "per_category": {
+   "Open All Band Low Power": {
+    "stations": 14,
+    "total": 42,
+    "worked": 7,
+    "open": 35,
+    "manual_overrides": 3,
+    "excluded": 0
+   },
+   "Restricted 12h": {
+    "stations": 8,
+    "total": 24,
+    "worked": 3,
+    "open": 21,
+    "manual_overrides": 0,
+    "excluded": 0
+   },
+   "Restricted 24h": {
+    "stations": 13,
+    "total": 39,
+    "worked": 8,
+    "open": 31,
+    "manual_overrides": 5,
+    "excluded": 0
+   },
+   "QRP 24h": {
+    "stations": 1,
+    "total": 3,
+    "worked": 1,
+    "open": 2,
+    "manual_overrides": 0,
+    "excluded": 0
+   },
+   "Open All Band High Power": {
+    "stations": 1,
+    "total": 3,
+    "worked": 0,
+    "open": 3,
+    "manual_overrides": 0,
+    "excluded": 0
+   },
+   "QRP 12h": {
+    "stations": 1,
+    "total": 3,
+    "worked": 0,
+    "open": 3,
+    "manual_overrides": 0,
+    "excluded": 0
+   }
+  }
+ },
+ "all_bands": [
+  "160m",
+  "80m",
+  "60m",
+  "40m",
+  "30m",
+  "20m",
+  "17m",
+  "15m",
+  "12m",
+  "10m",
+  "6m",
+  "4m",
+  "2m",
+  "70cm"
+ ],
+ "legend": {
+  "not_worked": "Not worked",
+  "worked_by_n1mm": "Worked (N1MM)",
+  "manual_worked": "Worked (manual)",
+  "manual_not_worked": "Not worked (manual)",
+  "excluded": "Excluded"
+ },
+ "colors": {
+  "not_worked": "#ffffff",
+  "worked_by_n1mm": "#4caf50",
+  "manual_worked": "#1b5e20",
+  "manual_not_worked": "#ffb300",
+  "excluded": "#9e9e9e"
+ },
+ "publication": {
+  "state": "live",
+  "end_utc": "2026-08-20T16:05:00Z"
+ }
+}
