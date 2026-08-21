@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "generated_at_utc": "2026-08-21T12:32:45Z",
+ "generated_at_utc": "2026-08-21T12:34:49Z",
  "app_version": "1.3.3",
  "readonly": true,
  "show_station_category": true,
@@ -19,7 +19,15 @@
   ],
   "closed": false
  },
- "sources": [],
+ "sources": [
+  {
+   "name": "PCHP-ON4AUB",
+   "last_seen_utc": "2026-08-21T12:33:17Z",
+   "packet_count": 2,
+   "last_address": "127.0.0.1",
+   "fresh": true
+  }
+ ],
  "stations": [
   {
    "callsign": "ON4BAF/P",
@@ -265,7 +273,12 @@
      "manual": true
     },
     "80m": {
-     "status": "not_worked"
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-21T12:32:49Z",
+     "mode": "LSB",
+     "freq_khz": 3708.0,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 1
     },
     "40m": {
      "status": "worked_by_n1mm",
@@ -282,6 +295,13 @@
      "at_utc": "2026-08-16T11:44:23Z",
      "mode": "LSB",
      "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB"
+    },
+    {
+     "band": "80m",
+     "at_utc": "2026-08-21T12:32:49Z",
+     "mode": "LSB",
+     "freq_khz": 3708.0,
      "source": "PCHP-ON4AUB"
     }
    ]
@@ -692,7 +712,12 @@
      "status": "not_worked"
     },
     "80m": {
-     "status": "not_worked"
+     "status": "worked_by_n1mm",
+     "at_utc": "2026-08-21T12:33:17Z",
+     "mode": "LSB",
+     "freq_khz": 3708.0,
+     "source": "PCHP-ON4AUB",
+     "qso_count": 1
     },
     "40m": {
      "status": "worked_by_n1mm",
@@ -709,6 +734,13 @@
      "at_utc": "2026-08-21T12:23:20Z",
      "mode": "LSB",
      "freq_khz": 7133.0,
+     "source": "PCHP-ON4AUB"
+    },
+    {
+     "band": "80m",
+     "at_utc": "2026-08-21T12:33:17Z",
+     "mode": "LSB",
+     "freq_khz": 3708.0,
      "source": "PCHP-ON4AUB"
     }
    ]
@@ -928,38 +960,56 @@
     }
    },
    "qsos": []
+  },
+  {
+   "callsign": "on4aub/p",
+   "normalized": "ON4AUB",
+   "category": "Restricted 12h",
+   "section": "wld",
+   "cells": {
+    "160m": {
+     "status": "not_worked"
+    },
+    "80m": {
+     "status": "not_worked"
+    },
+    "40m": {
+     "status": "not_worked"
+    }
+   },
+   "qsos": []
   }
  ],
  "stats": {
-  "stations_total": 38,
+  "stations_total": 39,
   "bands_total": 3,
-  "cells_total": 114,
-  "cells_worked": 23,
-  "cells_open": 91,
+  "cells_total": 117,
+  "cells_worked": 25,
+  "cells_open": 92,
   "manual_overrides": 9,
   "cells_excluded": 0,
-  "stations_complete": 5,
-  "stations_partial": 6,
-  "stations_untouched": 27,
+  "stations_complete": 6,
+  "stations_partial": 5,
+  "stations_untouched": 28,
   "per_band": {
    "160m": {
-    "total": 38,
+    "total": 39,
     "worked": 8,
-    "open": 30,
+    "open": 31,
     "manual_overrides": 5,
     "excluded": 0
    },
    "80m": {
-    "total": 38,
-    "worked": 5,
-    "open": 33,
+    "total": 39,
+    "worked": 7,
+    "open": 32,
     "manual_overrides": 3,
     "excluded": 0
    },
    "40m": {
-    "total": 38,
+    "total": 39,
     "worked": 10,
-    "open": 28,
+    "open": 29,
     "manual_overrides": 1,
     "excluded": 0
    }
@@ -974,26 +1024,26 @@
     "excluded": 0
    },
    "Restricted 12h": {
-    "stations": 8,
-    "total": 24,
+    "stations": 9,
+    "total": 27,
     "worked": 4,
-    "open": 20,
+    "open": 23,
     "manual_overrides": 0,
     "excluded": 0
    },
    "Restricted 24h": {
     "stations": 13,
     "total": 39,
-    "worked": 7,
-    "open": 32,
+    "worked": 8,
+    "open": 31,
     "manual_overrides": 3,
     "excluded": 0
    },
    "QRP 24h": {
     "stations": 1,
     "total": 3,
-    "worked": 2,
-    "open": 1,
+    "worked": 3,
+    "open": 0,
     "manual_overrides": 1,
     "excluded": 0
    },
