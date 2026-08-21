@@ -34,6 +34,7 @@ const STRINGS = {
     "filter.band.all": "All bands",
     "filter.category.all": "All categories",
     "filter.section.all": "All sections",
+    "filter.toggle": "Filters",
     "col.callsign": "Callsign",
     "col.band": "Band",
     "col.category": "Category",
@@ -229,6 +230,7 @@ const STRINGS = {
     "pub.result": "Published: {up} uploaded, {skip} unchanged.",
     "pub.resulterr": "Publish failed: {e}",
     "pub.offline": "No internet connection — publishing paused. It will resume automatically when you are back online.",
+    "pub.busy": "A publish is already in progress — try again in a moment.",
     "pub.pagesurl": "Public page:",
     "pub.tokenset": "token configured",
     "pub.notoken": "no token yet",
@@ -266,6 +268,7 @@ const STRINGS = {
     "filter.band.all": "Alle banden",
     "filter.category.all": "Alle categorieën",
     "filter.section.all": "Alle secties",
+    "filter.toggle": "Filters",
     "col.callsign": "Roepnaam",
     "col.band": "Band",
     "col.category": "Categorie",
@@ -461,6 +464,7 @@ const STRINGS = {
     "pub.result": "Gepubliceerd: {up} geüpload, {skip} ongewijzigd.",
     "pub.resulterr": "Publiceren mislukt: {e}",
     "pub.offline": "Geen internetverbinding — publiceren gepauzeerd. Het hervat vanzelf zodra je weer online bent.",
+    "pub.busy": "Er loopt al een publicatie — probeer het straks opnieuw.",
     "pub.pagesurl": "Publieke pagina:",
     "pub.tokenset": "token ingesteld",
     "pub.notoken": "nog geen token",
@@ -498,6 +502,7 @@ const STRINGS = {
     "filter.band.all": "Toutes les bandes",
     "filter.category.all": "Toutes les catégories",
     "filter.section.all": "Toutes les sections",
+    "filter.toggle": "Filtres",
     "col.callsign": "Indicatif",
     "col.band": "Bande",
     "col.category": "Catégorie",
@@ -693,6 +698,7 @@ const STRINGS = {
     "pub.result": "Publié : {up} envoyés, {skip} inchangés.",
     "pub.resulterr": "Échec de publication : {e}",
     "pub.offline": "Pas de connexion Internet — publication en pause. Elle reprendra automatiquement une fois en ligne.",
+    "pub.busy": "Une publication est déjà en cours — réessayez dans un instant.",
     "pub.pagesurl": "Page publique :",
     "pub.tokenset": "token configuré",
     "pub.notoken": "pas encore de token",
@@ -815,7 +821,19 @@ async function api(path, payload) {
   });
   const data = await response.json().catch(() => ({ ok: false, error: "bad response" }));
   if (!response.ok || data.ok === false) {
-    throw new Error(data.error || ("HTTP " + response.status));
+    // Endpoints like /api/publish/now answer with HTTP 200 and
+    // {ok:false, errors:[...]} on a partial failure — the real reason sits
+    // in the plural `errors`, not `error`. Falling back to "HTTP " + status
+    // in that case just prints the misleading "HTTP 200".
+    const reason = data.error ||
+      (Array.isArray(data.errors) && data.errors.length
+        ? data.errors.join("; ")
+        : null) ||
+      ("HTTP " + response.status);
+    const err = new Error(reason);
+    if (data.offline) err.offline = true;
+    if (data.already_running) err.busy = true;
+    throw err;
   }
   return data;
 }
@@ -886,6 +904,60 @@ function fmtUtc(iso) {
 
 /* ---------------------------------------------------------------- render */
 
+/* ---------------------------------------------------------- phone layout */
+
+/* On a phone the chrome above the table (topbar, wrapped tabs, three rows of
+ * filters) is far taller than the fixed `calc(100vh - 240px)` in the
+ * stylesheet assumed. The scroll box then ran on behind the fixed legend and
+ * swallowed the touch scroll: swiping scrolled inside the table instead of
+ * the page, so the first stations disappeared under the sticky header while
+ * the filters stayed on screen. Here the remaining height is measured, and
+ * the filter panel folds away. A pc or tablet keeps the stylesheet value. */
+const phone = window.matchMedia("(max-width: 700px)");
+
+function fitMatrixHeight() {
+  const root = document.documentElement;
+  if (!phone.matches) {
+    root.style.removeProperty("--matrix-max-h");
+    root.style.removeProperty("--legend-h");
+    return;
+  }
+  // The legend is fixed to the bottom edge and wraps over several rows on a
+  // narrow screen; its real height is what the other views need as bottom
+  // padding, and what the matrix has to stay clear of.
+  const legend = $("legend");
+  const legendHeight = legend ? legend.offsetHeight : 0;
+  root.style.setProperty("--legend-h", legendHeight + "px");
+
+  const wrap = document.querySelector(".matrix-wrap");
+  if (!wrap) {
+    root.style.removeProperty("--matrix-max-h");
+    return;
+  }
+  // Measured against an unscrolled page: the box then never reaches past the
+  // legend, and the value does not jitter while the page is being scrolled.
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const available = window.innerHeight - top - legendHeight - 8;
+  root.style.setProperty("--matrix-max-h", Math.max(available, 180) + "px");
+}
+
+let fitPending = false;
+function scheduleFit() {
+  if (fitPending) return;
+  fitPending = true;
+  window.requestAnimationFrame(() => {
+    fitPending = false;
+    fitMatrixHeight();
+  });
+}
+
+function setFiltersCollapsed(collapsed) {
+  $("filters").classList.toggle("collapsed", collapsed);
+  const toggle = $("filters-toggle");
+  if (toggle) toggle.setAttribute("aria-expanded", String(!collapsed));
+  scheduleFit();
+}
+
 function render() {
   if (!state.snapshot) return;
   const snap = state.snapshot;
@@ -947,6 +1019,12 @@ function render() {
     newInner.scrollTop = innerScroll.top;
   }
   if (pageScroll) window.scrollTo(0, pageScroll);
+
+  // A folded-away filter panel must still show that it is filtering, or a
+  // half-empty matrix looks like missing data.
+  const dot = $("filters-dot");
+  if (dot) dot.hidden = !anyFilterActive();
+  scheduleFit();
 }
 
 function ensureAddButton() {
@@ -2118,6 +2196,8 @@ async function manageAction(fn, okText) {
   } catch (err) {
     if (err && err.offline) {
       manageMsg = { kind: "warn", text: t("pub.offline") };
+    } else if (err && err.busy) {
+      manageMsg = { kind: "warn", text: t("pub.busy") };
     } else {
       manageMsg = { kind: "warn", text: t("manage.error", { e: err.message }) };
     }
@@ -2321,12 +2401,12 @@ document.addEventListener("click", async (event) => {
     return;
   }
   if (target.id === "pub-now") {
-    manageAction(async () => {
-      const result = await api("/api/publish/now", {});
-      if (result.offline) { const e = new Error("offline"); e.offline = true; throw e; }
-      if (!result.ok) throw new Error((result.errors || [result.error]).join("; "));
-      return result;
-    }, (r) => t("pub.result", { up: r.uploaded.length, skip: r.skipped.length }));
+    // api() now surfaces the real GitHub error (or the offline flag) itself,
+    // so this handler no longer needs its own duplicate error-shaping —
+    // that duplicate logic never actually ran, since api() always threw
+    // first on {ok:false}, before this callback's own checks were reached.
+    manageAction(() => api("/api/publish/now", {}),
+      (r) => t("pub.result", { up: r.uploaded.length, skip: r.skipped.length }));
     return;
   }
   if (target.id === "listener-restart") {
@@ -2472,6 +2552,24 @@ function applyStaticStrings() {
 }
 
 applyStaticStrings();
+
+// Phone layout: filters start folded, and the table height follows the
+// screen (see fitMatrixHeight).
+const filtersToggle = $("filters-toggle");
+if (filtersToggle) {
+  filtersToggle.addEventListener("click", () => {
+    setFiltersCollapsed(!$("filters").classList.contains("collapsed"));
+  });
+}
+setFiltersCollapsed(phone.matches);
+window.addEventListener("resize", scheduleFit);
+window.addEventListener("orientationchange", scheduleFit);
+if (phone.addEventListener) {
+  phone.addEventListener("change", () => {
+    setFiltersCollapsed(phone.matches);
+  });
+}
+
 fetchSnapshot();
 
 // Debug/test handle (also useful for field diagnostics in the console).
